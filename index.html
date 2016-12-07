@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+<title>Ramen</title>
+<link rel="stylesheet" href="css/main.css">
+<link href="https://fonts.googleapis.com/css?family=Ravi+Prakash" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+
+
+
+</head>
+
+
+<body>
+
+
+<div id="wrapper">
+
+
+<!--
+//////////////////////
+Vegetables should be placed here in between bowl front and back.
+//////////////////////
+-->
+<article id="parallax_wrap">
+  <div id="veggies"> </div>
+  <div id="broth"> </div>
+  <div id="chicken"> </div>
+  <div id="noodles"> </div>
+  <div id="seasoning"> </div>
+  <div id="peppers"> </div>
+</article>
+<!--
+//////////////////////
+Ramen Bowl
+//////////////////////
+-->
+
+<h2 id="title" class="floating">
+  <img src="steam.png" width="318" height="150">
+</h2>
+
+<h1 class="bowl">
+  <div><img src="ramenbowl.png" width="778" height="385"></div>
+</h1>
+
+<h1 id="title1" class="floating1">
+  Itadakimasu
+</h1>
+
+
+<!--
+//////////////////////
+Vertical Scroll Counter
+//////////////////////
+ -->
+
+
+ <script type="text/javascript">
+  $(window).scroll(function() {
+    $("div#vert_counter").text("px:" +$(window).scrollTop());
+});
+</script>
+
+<!--
+//////////////////////
+Parallax divs (targeted with nth-child)
+
+http://css-tricks.com/how-nth-child-works/
+
+//////////////////////
+ -->
+
+<script type="text/javascript">
+  $(window).scroll(function() {
+
+    var top = $(window).scrollTop();
+
+      console.log(2000 - top);
+
+    $("#veggies").css({
+    //    "top": ($(window).scrollTop()*2.8)-100 + "px"
+    "transform": "translate(" + ( 100 - top * 0.1 ) +"px," + (  top*1.3 - 1050) + "px)"
+  })
+
+    $("#broth").css({
+    //    "top": ($(window).scrollTop()*2.8)-100 + "px"
+    "transform": "translate(" + ( 250 - top * 0.2 ) +"px," + (  top*1.7 - 2050) + "px)"
+    })
+
+    $("#chicken").css({
+    //    "top": ($(window).scrollTop()*2.8)-100 + "px"
+    "transform": "translate(" + ( 50 - top * 0.1 ) +"px," + (  top*1.5 - 1050) + "px)"
+  })
+
+    $("#noodles").css({
+    //    "top": ($(window).scrollTop()*2.8)-100 + "px"
+    "transform": "translate(" + ( 14 - top * 0.1 ) +"px," + (  top*2 - 2050) + "px)"
+  })
+
+    $("#seasoning").css({
+    //    "top": ($(window).scrollTop()*2.8)-100 + "px"
+    "transform": "translate(" + ( 350 - top * 0.3 ) +"px," + (  top*1.3 - 2050) + "px)"
+    })
+
+    $("#peppers").css({
+    //    "top": ($(window).scrollTop()*2.8)-100 + "px"
+    "transform": "translate(" + ( 170 - top * 0.3 ) +"px," + (  top*1.3 - 1050) + "px)"
+    })
+
+
+
+
+});
+</script>
+
+
+</div>
+
+</body>
+</html>
